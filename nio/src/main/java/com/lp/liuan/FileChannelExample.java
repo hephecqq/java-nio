@@ -11,11 +11,11 @@ import java.nio.charset.CharsetDecoder;
 
 public class FileChannelExample {
     public static void main(String args[]){
-    	Charset charset = Charset.forName("GBK");
+    	Charset charset = Charset.forName("GBK");//Java.nio.charset.Charset处理了字符转换问题。它通过构造CharsetEncoder和CharsetDecoder将字符序列转换成字节和逆转换。
     	CharsetDecoder decoder = charset.newDecoder();
         FileInputStream fis = null;
         try {
-            fis = new FileInputStream("E:/ѧϰ�ܽ�/java���뱾��.txt");
+            fis = new FileInputStream("E:/学习总结/java乱码本质.txt");
             FileChannel fileChannel = fis.getChannel();
             ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
             CharBuffer charBuffer = CharBuffer.allocate(1024);
